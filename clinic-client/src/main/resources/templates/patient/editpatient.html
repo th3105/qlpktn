@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<link
+	href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<head>
+<title>Edit Doctor</title>
+</head>
+<body style="width: 30%; margin-left: 35%"}>
+	<form method="post" th:object="${patient}">
+ 
+ 	<div class="header">Sửa thông tin bệnh nhân</div>
+    <div class="form-group"> 
+		<label for="cmt_id" class="control-label">Mã số bệnh nhân</label>
+		<input type="text" class="form-control" id="cmt_id" name="id" th:value= "${patient.id}" placeholder="BN001">
+	</div>
+	
+    <div class="form-group"> 
+    	<div>
+    	<label for="cmt_id" class="control-label" th:text="CMT" style="color: black"></label>
+		<input type="text" class="form-control" id="cmt_id" name="cmt" th:value= "${patient.cmt}" placeholder="Chứng minh thư / Căn cước công dân">
+    	</div>
+		
+	</div>
+
+	<div class="form-group"> <!-- Full Name -->
+		<label for="full_name_id" class="control-label" >Họ Tên</label>
+		<input type="text" class="form-control" id="full_name_id" name="ten" th:value= "${patient.ten}" placeholder="John Deer">
+    </div>	
+
+    <div class="form-group"> <!--  DOB -->
+		<label for="cmt_id" class="control-label">Ngày sinh</label>
+		<input type="text" class="form-control" id="cmt_id" name="ngaysinh" th:value= "${patient.ngaysinh}"placeholder="Ngay sinh">
+	</div>
+
+	<div class="form-group"> <!-- Address -->
+		<label for="street1_id" class="control-label">Địa chỉ</label>
+		<input type="text" class="form-control" id="street1_id" name="diachi" th:value= "${patient.diachi}" placeholder="Địa chỉ">
+	</div>					
+							
+	<div class="form-group"> <!-- Bac nghe -->
+		<label for="street2_id" class="control-label">Số điện thoại</label>
+		<input type="text" class="form-control" id="street2_id" name="sdt" th:value= "${patient.sdt}" placeholder="Số điện thoại">
+	</div>	
+
+		
+	
+	<div class="form-group"> <!-- Submit Button -->
+		<button type="submit" class="btn btn-primary">Cap nhat</button>
+	</div>     
+	
+</form>	
+</body>
+</html>

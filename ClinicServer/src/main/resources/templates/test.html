@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>https://saophaixoan.net</title>
+</head>
+
+<body>
+<table id="ds-u" border="1">
+    <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Fullname</th>
+            <th>Email</th>
+    </tr>
+</table>
+<script>
+var url = "http://localhost:8080/doctor";
+
+fetch(url, {
+            method: "GET"
+        }).then(function(res) {
+            return res.json(); 
+        }).then(function(data) {
+            
+            console.log(data);
+            var bang = document.querySelector('#ds-u');
+            for (i = 0; i < data.length; i++) {
+                var obj = data[i];
+                let dong_moi = bang.insertRow(-1);
+
+                let o1 = dong_moi.insertCell(0);
+                o1.innerText = obj.id;
+
+                let o2 = dong_moi.insertCell(1);
+                o2.innerText = obj.username;
+
+                let o3 = dong_moi.insertCell(2);
+                o3.innerText = obj.fullname;
+
+                let o4 = dong_moi.insertCell(3);
+                o4.innerText = obj.email;
+
+            }
+        });
+        
+</script>
+
+</body>
+</html>
